@@ -1,0 +1,10 @@
+{
+  "title": "Lab 2 · States and Measurement",
+  "description": "Prepare single-qubit states, inspect statevectors and the Bloch sphere, and sample measurements.",
+  "version": 1,
+  "order": 2,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["basics", "statevector", "measurement"],
+  "level": "beginner",
+  "open": ["README.md", "lab02.py"]
+}

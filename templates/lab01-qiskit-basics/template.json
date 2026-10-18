@@ -1,0 +1,10 @@
+{
+  "title": "Lab 1 · Qiskit Basics",
+  "description": "Build your first circuits: gates, measurement, composing, inverting, and parameters.",
+  "version": 1,
+  "order": 1,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["basics", "circuits"],
+  "level": "beginner",
+  "open": ["README.md", "lab01.py"]
+}

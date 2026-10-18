@@ -1,0 +1,10 @@
+{
+  "title": "Lab 8 · QFT and Phase Estimation",
+  "description": "Build the quantum Fourier transform from scratch and use it to estimate the phase of a unitary.",
+  "version": 1,
+  "order": 8,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["algorithms", "qft", "phase-estimation"],
+  "level": "advanced",
+  "open": ["README.md", "lab08.py"]
+}

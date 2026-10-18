@@ -1,0 +1,10 @@
+{
+  "title": "Lab 3 · Entanglement",
+  "description": "Build the four Bell states and GHZ states, and test for entanglement with reduced density matrices.",
+  "version": 1,
+  "order": 3,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["entanglement", "statevector", "multi-qubit"],
+  "level": "beginner",
+  "open": ["README.md", "lab03.py"]
+}

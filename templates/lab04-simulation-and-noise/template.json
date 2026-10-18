@@ -1,0 +1,10 @@
+{
+  "title": "Lab 4 · Simulation and Noise",
+  "description": "Run circuits on Aer, transpile to a hardware basis, add depolarizing and readout noise, and measure the damage.",
+  "version": 1,
+  "order": 4,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["simulation", "aer", "noise", "transpile"],
+  "level": "intermediate",
+  "open": ["README.md", "lab04.py"]
+}

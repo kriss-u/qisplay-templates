@@ -1,0 +1,10 @@
+{
+  "title": "Lab 6 · Deutsch–Jozsa and Bernstein–Vazirani",
+  "description": "Build oracles and solve two query problems with a single call to the oracle.",
+  "version": 1,
+  "order": 6,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["algorithms", "oracles"],
+  "level": "intermediate",
+  "open": ["README.md", "lab06.py"]
+}

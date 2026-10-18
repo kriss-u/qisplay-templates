@@ -1,0 +1,10 @@
+{
+  "title": "Lab 5 · Teleportation and Superdense Coding",
+  "description": "Use shared entanglement to send two classical bits with one qubit, and one qubit with two classical bits.",
+  "version": 1,
+  "order": 5,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["protocols", "entanglement", "dynamic-circuits"],
+  "level": "intermediate",
+  "open": ["README.md", "lab05.py"]
+}

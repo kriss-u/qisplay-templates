@@ -1,0 +1,259 @@
+{
+  "schema": 1,
+  "collections": [
+    {
+      "id": "intro-to-quantum-computing",
+      "title": "Intro to Quantum Computing",
+      "description": "Practice labs for an introductory quantum computing course, from Qiskit basics to simulation and algorithms."
+    }
+  ],
+  "templates": [
+    {
+      "id": "lab01-qiskit-basics",
+      "title": "Lab 1 · Qiskit Basics",
+      "description": "Build your first circuits: gates, measurement, composing, inverting, and parameters.",
+      "version": 1,
+      "order": 1,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "basics",
+        "circuits"
+      ],
+      "level": "beginner",
+      "open": [
+        "README.md",
+        "lab01.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 1871
+        },
+        {
+          "path": "lab01.py",
+          "size": 2405
+        }
+      ],
+      "hash": "19c6af4696734963"
+    },
+    {
+      "id": "lab02-states-and-measurement",
+      "title": "Lab 2 · States and Measurement",
+      "description": "Prepare single-qubit states, inspect statevectors and the Bloch sphere, and sample measurements.",
+      "version": 1,
+      "order": 2,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "basics",
+        "statevector",
+        "measurement"
+      ],
+      "level": "beginner",
+      "open": [
+        "README.md",
+        "lab02.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 1660
+        },
+        {
+          "path": "lab02.py",
+          "size": 2567
+        }
+      ],
+      "hash": "4cbf3195345afc9f"
+    },
+    {
+      "id": "lab03-entanglement",
+      "title": "Lab 3 · Entanglement",
+      "description": "Build the four Bell states and GHZ states, and test for entanglement with reduced density matrices.",
+      "version": 1,
+      "order": 3,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "entanglement",
+        "statevector",
+        "multi-qubit"
+      ],
+      "level": "beginner",
+      "open": [
+        "README.md",
+        "lab03.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 1680
+        },
+        {
+          "path": "lab03.py",
+          "size": 2068
+        }
+      ],
+      "hash": "6a283c86d9064a19"
+    },
+    {
+      "id": "lab04-simulation-and-noise",
+      "title": "Lab 4 · Simulation and Noise",
+      "description": "Run circuits on Aer, transpile to a hardware basis, add depolarizing and readout noise, and measure the damage.",
+      "version": 1,
+      "order": 4,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "simulation",
+        "aer",
+        "noise",
+        "transpile"
+      ],
+      "level": "intermediate",
+      "open": [
+        "README.md",
+        "lab04.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 1973
+        },
+        {
+          "path": "lab04.py",
+          "size": 2907
+        }
+      ],
+      "hash": "e2fb1056a5f7e572"
+    },
+    {
+      "id": "lab05-teleportation-and-superdense",
+      "title": "Lab 5 · Teleportation and Superdense Coding",
+      "description": "Use shared entanglement to send two classical bits with one qubit, and one qubit with two classical bits.",
+      "version": 1,
+      "order": 5,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "protocols",
+        "entanglement",
+        "dynamic-circuits"
+      ],
+      "level": "intermediate",
+      "open": [
+        "README.md",
+        "lab05.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 2559
+        },
+        {
+          "path": "lab05.py",
+          "size": 2516
+        }
+      ],
+      "hash": "3795697ae3043c58"
+    },
+    {
+      "id": "lab06-deutsch-jozsa-bernstein-vazirani",
+      "title": "Lab 6 · Deutsch–Jozsa and Bernstein–Vazirani",
+      "description": "Build oracles and solve two query problems with a single call to the oracle.",
+      "version": 1,
+      "order": 6,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "algorithms",
+        "oracles"
+      ],
+      "level": "intermediate",
+      "open": [
+        "README.md",
+        "lab06.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 2026
+        },
+        {
+          "path": "lab06.py",
+          "size": 2160
+        }
+      ],
+      "hash": "ad747a0c90170a54"
+    },
+    {
+      "id": "lab07-grover-search",
+      "title": "Lab 7 · Grover's Search",
+      "description": "Find marked items with amplitude amplification: phase oracles, the diffuser, and the optimal number of iterations.",
+      "version": 1,
+      "order": 7,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "algorithms",
+        "grover",
+        "amplitude-amplification"
+      ],
+      "level": "intermediate",
+      "open": [
+        "README.md",
+        "lab07.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 1850
+        },
+        {
+          "path": "lab07.py",
+          "size": 2823
+        }
+      ],
+      "hash": "1a832f5f8a577cfb"
+    },
+    {
+      "id": "lab08-qft-and-phase-estimation",
+      "title": "Lab 8 · QFT and Phase Estimation",
+      "description": "Build the quantum Fourier transform from scratch and use it to estimate the phase of a unitary.",
+      "version": 1,
+      "order": 8,
+      "collections": [
+        "intro-to-quantum-computing"
+      ],
+      "tags": [
+        "algorithms",
+        "qft",
+        "phase-estimation"
+      ],
+      "level": "advanced",
+      "open": [
+        "README.md",
+        "lab08.py"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "size": 1849
+        },
+        {
+          "path": "lab08.py",
+          "size": 2062
+        }
+      ],
+      "hash": "70be6e675fe3befa"
+    }
+  ]
+}

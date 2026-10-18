@@ -1,0 +1,10 @@
+{
+  "title": "Lab 7 · Grover's Search",
+  "description": "Find marked items with amplitude amplification: phase oracles, the diffuser, and the optimal number of iterations.",
+  "version": 1,
+  "order": 7,
+  "collections": ["intro-to-quantum-computing"],
+  "tags": ["algorithms", "grover", "amplitude-amplification"],
+  "level": "intermediate",
+  "open": ["README.md", "lab07.py"]
+}
