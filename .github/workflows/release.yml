@@ -1,20 +1,61 @@
-# Push a tag like v1.2.0 to publish. QisPlay picks up the newest version tag
-# through jsDelivr, so this only verifies the tag and refreshes jsDelivr's cache.
+# QisPlay loads the newest vX.Y.Z tag through jsDelivr, so a release here is
+# what publishes template changes to students.
 name: Release
+
 on:
   push:
-    tags: ["v*.*.*"]
+    branches:
+      - main
+      - beta
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: release-${{ github.ref_name }}
+  cancel-in-progress: false
 
 jobs:
-  publish:
+  test:
+    name: Test
+    uses: ./.github/workflows/test.yml
+
+  release:
+    name: Release
+    needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v7
         with:
-          node-version: 22
-      - run: node scripts/build-index.mjs --check
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
+
+      - name: Release
+        id: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HUSKY: 0
+        run: |
+          npx semantic-release
+          echo "tag=$(git tag --points-at HEAD --list 'v*' | head -n 1)" >> "$GITHUB_OUTPUT"
+
+      # jsDelivr caches "latest" lookups for a few minutes; ask it to look again.
       - name: Refresh jsDelivr
+        if: steps.release.outputs.tag != ''
         run: |
           curl -fsS "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@latest/index.json" || true
           curl -fsS "https://data.jsdelivr.com/v1/packages/gh/${GITHUB_REPOSITORY}/resolved?specifier=latest" || true

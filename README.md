@@ -14,6 +14,8 @@ templates/<id>/template.json  title, version, tags, ...
 templates/<id>/...            the files a new project starts with
 index.json                    generated catalog; don't edit by hand
 scripts/build-index.mjs       builds and checks index.json
+CHANGELOG.md                  written by semantic-release
+.releaserc.json               semantic-release config
 ```
 
 ## template.json
@@ -49,23 +51,43 @@ because update notices match on it.
 
 ## Workflow
 
+Requires Node 24.15+. Run `npm install` once; it also installs the Git hooks.
+
 1. Edit or add files under `templates/`.
-2. Run `node scripts/build-index.mjs` (Node 20.11+). It validates everything and
-   rewrites `index.json`. It also warns when a template changed but its
-   `version` didn't.
-3. Commit, then tag and push:
+2. Run `npm run build`. It validates everything and rewrites `index.json`, and
+   warns when a template changed but its `version` didn't.
+3. Commit with a [Conventional Commit](https://www.conventionalcommits.org/)
+   message and push to `main` (or merge a PR, whose title becomes the commit).
 
-   ```sh
-   git tag v1.1.0
-   git push origin main --tags
-   ```
+The Release workflow then runs semantic-release, which reads the commits since the
+last tag, picks the next version, updates `CHANGELOG.md`, tags `vX.Y.Z` and creates
+a GitHub release. QisPlay picks up the new tag within a few minutes.
 
-   QisPlay finds the new tag within a few minutes (jsDelivr caches version lookups
-   briefly).
+| Commit                                   | Release |
+| ---------------------------------------- | ------- |
+| `fix: correct the Grover hint`           | patch   |
+| `feat: add lab 9 on VQE`                 | minor   |
+| `feat!: ...` or a `BREAKING CHANGE:` footer | major   |
+| `docs:`, `chore:`, `ci:`, `refactor:` ...   | none    |
 
-To preview before tagging, open
-`https://qisplay.nepcodex.com/?templates=<commit-sha>` after pushing. That loads
-the catalog at that exact commit.
+The repo version and a template's `version` are separate. The repo version says
+which catalog is newest. A template's `version` decides whether students who
+already opened that template see "Template updated", so bump it only when they
+should take a fresh copy.
+
+Pushing to the `beta` branch makes prereleases (`vX.Y.Z-beta.N`). QisPlay only loads
+full releases, so you can preview a beta with `?templates=<tag>`.
+
+### Hooks and CI
+
+- **Local hooks:** `commit-msg` runs commitlint, and `pre-commit` runs `npm run check`.
+- **Test** (on PRs and before every release): checks `index.json` and compiles the
+  lab files.
+- **Commitlint:** checks PR titles.
+
+To preview without releasing, push a commit and open
+`https://qisplay.nepcodex.com/?templates=<commit-sha>`. That loads the catalog at
+that exact commit.
 
 ## Linking students to a collection
 
